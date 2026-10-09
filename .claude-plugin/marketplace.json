@@ -1,0 +1,17 @@
+{
+  "name": "zenrows",
+  "owner": {
+    "name": "Zenrows",
+    "email": "support@zenrows.com"
+  },
+  "metadata": {
+    "description": "Zenrows for Claude: live web data through the Zenrows MCP server."
+  },
+  "plugins": [
+    {
+      "name": "zenrows",
+      "source": "./",
+      "description": "Live web data for Claude: fetch pages, extract structured data, run batch jobs and drive hosted browser sessions through the Zenrows MCP server."
+    }
+  ]
+}
