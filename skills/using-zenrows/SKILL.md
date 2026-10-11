@@ -7,7 +7,7 @@ description: Overview of the Zenrows tools for live web data. Use when a task ne
 
 Zenrows gives Claude live web data through the Zenrows MCP server: page fetching, structured extraction, batch jobs over many URLs, and hosted browser sessions. Zenrows is a paid service: every request uses credits on the user's Zenrows plan.
 
-The Zenrows connector signs in with OAuth. If the Zenrows tools are missing or return an `AUTH` error, use the `getting-started` skill. Never ask the user to paste an API key into the conversation.
+The Zenrows connector signs in with OAuth. If the Zenrows tools are missing or return `AUTH003`, use the `getting-started` skill. Never ask the user to paste an API key into the conversation.
 
 ## Tools
 
@@ -63,10 +63,11 @@ Hosted browser sessions for multi-step tasks: `browser_navigate`, `browser_click
 ## Errors
 
 - Do not build manual retry loops around a request. Zenrows already escalates to heavier settings when a page needs it.
-- `401` or an `AUTH` code (for example `AUTH002`): Zenrows is not connected or the sign-in expired. Use the `getting-started` skill. Do not ask for a key.
-- `429`: the plan's concurrency limit was reached. Wait and retry, or tell the user about their plan limits.
+- `401` or `AUTH003`: Zenrows is not connected, or the sign-in is no longer valid (for example the API key was rotated). Use the `getting-started` skill to reconnect. Do not ask for a key.
+- `AUTH004` (the account's credit allowance is spent) or `AUTH014` (this API key reached its credit cap): a plan limit, not a sign-in problem. Reconnecting doesn't clear it. Tell the user; they can wait for the allowance to renew, top up or upgrade, or raise the key's cap.
+- `AUTH006`: too many requests are running at once. Wait for running requests to finish, then retry.
 - `413`: the response is too large. Narrow it with `css_extractor`.
-- `AUTH010` from `extract`: the domain is outside the Extract beta. `fallback_autoparse` (on by default) retries with autoparse. Surface the error only if the user asked for strict extraction.
+- `AUTH010` or `REQS007` from `extract`: Extract isn't enabled or prepared for that domain. `fallback_autoparse` (on by default) retries with autoparse. Surface the error only if the user asked for strict extraction.
 - Look up any other error code at https://docs.zenrows.com.
 
 ## Concurrency

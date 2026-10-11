@@ -1,6 +1,6 @@
 ---
 name: getting-started
-description: First-run setup and troubleshooting for the Zenrows plugin in Claude. Use when the plugin was just installed, a Zenrows tool is missing or "not available", Zenrows returns a 401 or an AUTH error, the connector needs sign-in, or the user asks whether Zenrows is set up. Not for normal scraping tasks once the plugin works (use scrape-webpage).
+description: First-run setup and troubleshooting for the Zenrows plugin in Claude. Use when the plugin was just installed, a Zenrows tool is missing or "not available", Zenrows returns a 401 or AUTH003, the connector needs sign-in, or the user asks whether Zenrows is set up. Not for normal scraping tasks once the plugin works (use scrape-webpage).
 ---
 
 # Getting started
@@ -12,11 +12,12 @@ Run the checks below. Do the work; do not just print instructions. The Zenrows c
 First confirm the Zenrows tools (`scrape`, `browser_*`) are available in this session.
 
 - Tools missing entirely: Zenrows is not connected yet. Tell the user how to connect it:
-  - In Claude (web or desktop): open **Settings → Connectors**, find **Zenrows**, choose **Connect**, sign in to Zenrows and approve access.
+  - In Claude (web or desktop): open **Customize → Connectors**, find **Zenrows**, choose **Connect**, sign in to Zenrows and approve access.
   - In Claude Code: run `/mcp`, select the `zenrows` server and choose **Authenticate**, then sign in to Zenrows in the browser.
 - Tools present: call `scrape(url='https://httpbin.io/get', response_type='plaintext')` and branch:
   - 200 with a body: Zenrows is working. Go to step 2.
-  - 401, or an `AUTH` error: the sign-in is missing or expired. Ask the user to reconnect Zenrows the same way as above, then retry. Do not ask for an API key.
+  - 401 or `AUTH003`: the sign-in is missing or no longer valid. Ask the user to reconnect Zenrows the same way as above, then retry. Do not ask for an API key.
+  - `AUTH004` or `AUTH014`: Zenrows is connected, but the account's credits or this API key's credit cap are used up. Reconnecting won't help. Tell the user to check their plan in the Zenrows dashboard.
 
 ## 2. First successful scrape
 
