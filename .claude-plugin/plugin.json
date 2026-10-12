@@ -1,7 +1,7 @@
 {
   "name": "zenrows",
   "displayName": "Zenrows",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Live web data for Claude: fetch pages, extract structured data, run batch jobs and drive hosted browser sessions through the Zenrows MCP server.",
   "author": {
     "name": "Zenrows",
@@ -9,8 +9,13 @@
     "url": "https://www.zenrows.com"
   },
   "homepage": "https://docs.zenrows.com",
+  "documentationUrl": "https://docs.zenrows.com/integrations/claude",
+  "supportUrl": "https://www.zenrows.com/contact",
+  "privacyPolicyUrl": "https://www.zenrows.com/legal/privacy",
+  "termsOfServiceUrl": "https://www.zenrows.com/legal/terms",
   "repository": "https://github.com/ZenRows/claude-zenrows",
   "license": "MIT",
   "keywords": ["web-scraping", "data-extraction", "browser-automation", "mcp", "zenrows"],
+  "icon": "./assets/logo.png",
   "mcpServers": "./.mcp.json"
 }

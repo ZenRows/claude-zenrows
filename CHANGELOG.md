@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- `plugin.json` sets the documentation, support, privacy policy and terms URLs, so the directory listing doesn't read them from the README with the trailing full stop attached.
+- README links are Markdown links.
+- `plugin.json` points `icon` at `assets/logo.png`, the listing icon.
+
 ## 0.1.1
 
 - Skills tell Claude to reconnect only on `401` or `AUTH003`. `AUTH004`, `AUTH014` and `AUTH006` are plan limits that reconnecting doesn't clear.
