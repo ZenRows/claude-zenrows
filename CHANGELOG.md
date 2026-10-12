@@ -4,7 +4,7 @@
 
 - `plugin.json` sets the documentation, support, privacy policy and terms URLs, so the directory listing doesn't read them from the README with the trailing full stop attached.
 - README links are Markdown links.
-- `.claude-plugin/icon.png` is the listing icon.
+- `plugin.json` points `icon` at `assets/logo.png`, the listing icon.
 
 ## 0.1.1
 

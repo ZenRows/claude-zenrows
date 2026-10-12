@@ -16,5 +16,6 @@
   "repository": "https://github.com/ZenRows/claude-zenrows",
   "license": "MIT",
   "keywords": ["web-scraping", "data-extraction", "browser-automation", "mcp", "zenrows"],
+  "icon": "./assets/logo.png",
   "mcpServers": "./.mcp.json"
 }
