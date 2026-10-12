@@ -21,7 +21,7 @@ Live web data for Claude. This plugin connects Claude to the Zenrows MCP server,
 
 ## Requirements
 
-A Zenrows account. Requests use credits on your Zenrows plan. You can sign up at https://app.zenrows.com/register.
+A Zenrows account. Requests use credits on your Zenrows plan. You can [sign up here](https://app.zenrows.com/register).
 
 ## Setup
 
@@ -40,11 +40,12 @@ Then ask Claude something like: "Use Zenrows to get the product names and prices
 
 ## Privacy
 
-The plugin sends the URLs and options you ask Claude to fetch to Zenrows, which processes them under the Zenrows privacy policy: https://www.zenrows.com/legal/privacy.
+The plugin sends the URLs and options you ask Claude to fetch to Zenrows, which processes them under the [Zenrows privacy policy](https://www.zenrows.com/legal/privacy).
 
 ## Support
 
-Documentation: https://docs.zenrows.com. Contact: success@zenrows.com.
+- Documentation: [docs.zenrows.com/integrations/claude](https://docs.zenrows.com/integrations/claude)
+- Contact: [success@zenrows.com](mailto:success@zenrows.com)
 
 ## License
 
