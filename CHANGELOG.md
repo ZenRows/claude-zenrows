@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The `extract` skills no longer describe Extract as a beta or as gated by domain. It works on any domain Zenrows has prepared, with any API key; `REQS007` means the domain isn't prepared yet, and `AUTH010` is the older code for the same case.
+
 ## 0.1.2
 
 - `plugin.json` sets the documentation, support, privacy policy and terms URLs, so the directory listing doesn't read them from the README with the trailing full stop attached.
