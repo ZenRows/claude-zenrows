@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- The `extract` skills no longer describe Extract as a beta or as gated by domain.
+
 ## 0.1.2
 
 - `plugin.json` sets the documentation, support, privacy policy and terms URLs, so the directory listing doesn't read them from the README with the trailing full stop attached.
