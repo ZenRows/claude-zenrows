@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4
+
+- The `crawl` skill now uses the Zenrows Crawl job (`crawl_create`, `crawl_wait`, `crawl_results`) instead of a page-by-page loop built on `scrape`, so a crawl runs as one server-side job and supports `include_patterns` / `exclude_patterns`.
+- `using-zenrows` lists the `crawl_*` tools and says when to reach for them.
+
 ## 0.1.3
 
 - The `extract` skills no longer describe Extract as a beta or as gated by domain.
