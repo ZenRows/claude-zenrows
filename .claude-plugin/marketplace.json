@@ -11,7 +11,7 @@
     {
       "name": "zenrows",
       "source": "./",
-      "description": "Live web data for Claude: fetch pages, extract structured data, run batch jobs and drive hosted browser sessions through the Zenrows MCP server."
+      "description": "Live web data for Claude: fetch pages, extract structured data, crawl sites, run batch jobs and drive hosted browser sessions through the Zenrows MCP server."
     }
   ]
 }

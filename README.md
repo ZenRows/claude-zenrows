@@ -1,6 +1,6 @@
 # Zenrows for Claude
 
-Live web data for Claude. This plugin connects Claude to the Zenrows MCP server, so Claude can fetch the current content of any public page, pull structured fields from it, run batch jobs over many URLs, and drive a hosted browser for pages that need clicks, forms or pagination. It also adds skills that tell Claude which Zenrows tool fits each task and how to keep requests efficient.
+Live web data for Claude. This plugin connects Claude to the Zenrows MCP server, so Claude can fetch the current content of any public page, pull structured fields from it, crawl a site from one start URL, run batch jobs over many URLs, and drive a hosted browser for pages that need clicks, forms or pagination. It also adds skills that tell Claude which Zenrows tool fits each task and how to keep requests efficient.
 
 ## What you get
 

@@ -1,8 +1,8 @@
 {
   "name": "zenrows",
   "displayName": "Zenrows",
-  "version": "0.1.4",
-  "description": "Live web data for Claude: fetch pages, extract structured data, run batch jobs and drive hosted browser sessions through the Zenrows MCP server.",
+  "version": "0.1.5",
+  "description": "Live web data for Claude: fetch pages, extract structured data, crawl sites, run batch jobs and drive hosted browser sessions through the Zenrows MCP server.",
   "author": {
     "name": "Zenrows",
     "email": "success@zenrows.com",

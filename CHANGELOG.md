@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- The plugin description (in `plugin.json` and `marketplace.json`) and the README name Crawl next to fetch, extract, batch and browser sessions, so the directory listing shows it.
+
 ## 0.1.4
 
 - The `crawl` skill now uses the Zenrows Crawl job (`crawl_create`, `crawl_wait`, `crawl_results`) instead of a page-by-page loop built on `scrape`, so a crawl runs as one server-side job and supports `include_patterns` / `exclude_patterns`.
