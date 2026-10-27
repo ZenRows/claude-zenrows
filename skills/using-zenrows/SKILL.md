@@ -21,7 +21,9 @@ Key parameters: `url`, `response_type`, `proxy_country`, `css_extractor`, `autop
 
 ### `extract`
 
-Structured extraction from one page. Returns JSON. Parameters: `url`, `mode` (`auto`, `autoparse` or `css`), `css_extractor` (required when `mode='css'`), `js_render`, `premium_proxy`, `mode_auto`, `proxy_country`, `wait_for`, `wait`, `fallback_autoparse`.
+Structured extraction from one page. Returns JSON. Parameters: `url`, `mode` (`auto` by default, or `css`; `autoparse` is deprecated), `css_extractor` (required when `mode='css'`), `include_html`, `js_render`, `premium_proxy`, `mode_auto`, `proxy_country`, `wait_for`, `wait`.
+
+`prepare_domain` and `prepared_domain_status` prepare a domain for `extract` when it answers `REQS007` with reason `domain_not_prepared` (see the `extract-structured-data` skill).
 
 On `extract`, `mode` selects the extraction strategy. `scrape` has no `mode` parameter.
 
@@ -72,7 +74,7 @@ Hosted browser sessions for multi-step tasks: `browser_navigate`, `browser_click
 - `AUTH004` (the account's credit allowance is spent) or `AUTH014` (this API key reached its credit cap): a plan limit, not a sign-in problem. Reconnecting doesn't clear it. Tell the user; they can wait for the allowance to renew, top up or upgrade, or raise the key's cap.
 - `AUTH006`: too many requests are running at once. Wait for running requests to finish, then retry.
 - `413`: the response is too large. Narrow it with `css_extractor`.
-- `REQS007` (or the older `AUTH010`) from `extract`: Extract hasn't prepared that domain yet. `fallback_autoparse` (on by default) retries with autoparse. Surface the error only if the user asked for strict extraction.
+- `REQS007` (or the older `AUTH010`) from `extract`: read its `reason`. `domain_not_prepared`: prepare the domain with `prepare_domain` and wait for `prepared_domain_status` to say `ready`. `page_not_recognised`: try a product, article or listing page, or `mode='css'`; don't prepare the domain again. `domain_not_enabled`: use `mode='css'`. Not charged in any case. Details in the `extract-structured-data` skill.
 - Look up any other error code at https://docs.zenrows.com.
 
 ## Concurrency
